@@ -8,9 +8,7 @@ body{
   justify-content: center;
   align-items: center;
 
-  background-image: url(https://i.pinimg.com/736x/d2/81/88/d2818857ab77bb5df6c0c8dcfa8a2e88.jpg);
-  background-size: auto;
-  backdrop-filter: blur(10px);
+  background: white;
 }
 .box{
   background-color: #ffff88;
