@@ -15,7 +15,7 @@ function getData(x){
 
 function render(){
   document.querySelector('.content').innerHTML = '';
-  for(i = 10; i >= 0; i--){
+  for(i = 9; i >= 0; i--){
     let y = i+100
     
       document.querySelector('.content').innerHTML += `<div class='blank'></div>`;
@@ -37,15 +37,19 @@ render();
 
 postButton.addEventListener('click', function(){
   if(data.value == ''){
-    alert('tidak boleh kosong bung');
+    document.getElementById('alertPop').innerHTML +=
+    '<div><div>x</div><h1>Tidak boleh kosong</h1><button onclick="removePop()">OK</button></div>';
+    document.getElementById('alertPop').setAttribute('class', 'show');
   }else{
-    if(count/100 >= 1 && count%100 <= 10){
+    if(count/100 > 0 && count%100 < 10){
       localStorage.setItem(count, data.value);
       count++;
       getData[count%100] = false;
       render();
     }else{
-      alert('list sudah penuh');
+      document.getElementById('alertPop').innerHTML +=
+      '<div><div>x</div><h1>Catatan sudah melebihi batas <br> Maksimal 10</h1><button onclick="removePop()">OK</button></div>';
+      document.getElementById('alertPop').setAttribute('class', 'show');
     }
   }
 })
@@ -64,4 +68,9 @@ function cek(x){
   localStorage.setItem(x%100, true);
   render();
   console.log(getData(x%100));
+}
+
+function removePop(){
+  document.getElementById('alertPop').innerHTML = '';
+  document.getElementById('alertPop').removeAttribute('class');
 }
