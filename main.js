@@ -41,7 +41,7 @@ postButton.addEventListener('click', function(){
     '<div><div>x</div><h1>Tidak boleh kosong</h1><button onclick="removePop()">OK</button></div>';
     document.getElementById('alertPop').setAttribute('class', 'show');
   }else{
-    if(count/100 > 0 && count%100 <= 11){
+    if(count/100 > 0 && count%100 < 10){
       localStorage.setItem(count, data.value);
       count++;
       getData[count%100] = false;
