@@ -40,6 +40,11 @@ postButton.addEventListener('click', function(){
     document.getElementById('alertPop').innerHTML +=
     '<div><div>x</div><h1>Tidak boleh kosong</h1><button onclick="removePop()">OK</button></div>';
     document.getElementById('alertPop').setAttribute('class', 'show');
+  }else if(data.value.length > 25){
+    document.getElementById('alertPop').innerHTML +=
+    '<div><div>x</div><h1>Kolom tidak bisa memuat kalimat ini</h1><button onclick="removePop()">OK</button></div>';
+    document.getElementById('alertPop').setAttribute('class', 'show');
+
   }else{
     if(count/100 > 0 && count%100 < 10){
       localStorage.setItem(count, data.value);
