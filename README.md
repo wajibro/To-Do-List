@@ -1,5 +1,4 @@
 # UPI LIST
-## Tampilan awal
 
 <p>
   <img src="img/Screenshot%20(80).png" align="left">
